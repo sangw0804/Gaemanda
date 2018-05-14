@@ -1,0 +1,4 @@
+<%= @randomUser.inspect%>
+
+<%= link_to '맘에드네', like_update_path(current_user.id,@randomUser.id), method: :post%>
+<%= link_to '다음!', show_user_path%>

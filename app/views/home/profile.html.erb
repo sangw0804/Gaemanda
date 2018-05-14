@@ -1,0 +1,6 @@
+현재유저 : <%= @user.inspect%>
+<br>
+내가 좋아요 누른 유저 : 
+<% @liked_users.each do |liked_user|%>
+<%=  liked_user.inspect%>
+<% end%>
