@@ -10,12 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180514130558) do
+ActiveRecord::Schema.define(version: 20180515041306) do
 
   create_table "likes", force: :cascade do |t|
     t.integer "liker"
     t.integer "likee"
     t.boolean "matched"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "matches", force: :cascade do |t|
+    t.integer "user1"
+    t.integer "user2"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

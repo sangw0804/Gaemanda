@@ -1,6 +1,13 @@
-현재유저 : <%= @user.inspect%>
+현재유저 : <%= current_user.inspect%>
 <br>
 내가 좋아요 누른 유저 : 
 <% @liked_users.each do |liked_user|%>
-<%=  liked_user.inspect%>
+    <%= liked_user[0].inspect%>
+    <%= link_to '좋아요 취소!', like_delete_path(current_user.id, liked_user[0].id), method: :delete%>
+    <% if liked_user[1]%>
+        <%= link_to '매칭됨!!!!', '#'%>
+    <% end%>
+    <br>
 <% end%>
+
+<%= link_to '메인으로', root_path%>
