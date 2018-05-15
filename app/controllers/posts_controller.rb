@@ -14,7 +14,11 @@ class PostsController < ApplicationController
 
   # GET /posts/new
   def new
+    @posts = Post.where(match_id: params[:match_id])
     @post = Post.new
+    @match_id = params[:match_id]
+    @user_id = params[:user_id]
+    @likee_id = params[:likee_id]
   end
 
   # GET /posts/1/edit
@@ -28,7 +32,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
+        format.html { redirect_to post_new_match_path(params["post"]["match_id"], params["post"]["from_id"], params["post"]["to_id"]), notice: 'Post was successfully created.' }
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new }
@@ -69,6 +73,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:match_id, :content)
+      params.require(:post).permit(:match_id, :content,:from_id,:to_id)
     end
 end

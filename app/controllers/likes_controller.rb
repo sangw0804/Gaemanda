@@ -20,11 +20,11 @@ class LikesController < ApplicationController
 
   def check_is_matched(like)
     if like1 = Like.where(liker: like.likee).where(likee: like.liker).first
-      like1.update_attributes(matched: true)
-      like.update_attributes(matched: true)
       tempsort = [like.liker,like.likee].sort
       match = Match.new(user1: tempsort[0], user2: tempsort[1])
       match.save
+      like1.update_attributes(matched: match.id)
+      like.update_attributes(matched: match.id)
     end
   end
 

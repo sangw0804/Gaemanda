@@ -33,7 +33,7 @@ class HomeController < ApplicationController
     if likes
       @liked_users = Array.new
       likes.each do |like|
-        @liked_users.push([User.find(like.likee),like.matched])
+        @liked_users.push([User.find(like.likee),like.matched,like.matched])
       end
     end
   end

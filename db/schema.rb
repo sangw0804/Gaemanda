@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180515041306) do
+ActiveRecord::Schema.define(version: 20180515092646) do
 
   create_table "likes", force: :cascade do |t|
     t.integer "liker"
     t.integer "likee"
-    t.boolean "matched"
+    t.integer "matched"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(version: 20180515041306) do
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "from_id"
+    t.integer "to_id"
   end
 
   create_table "users", force: :cascade do |t|

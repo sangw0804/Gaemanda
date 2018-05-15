@@ -12,8 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :match_id %>
-    <%= form.number_field :match_id, id: :post_match_id %>
+
+    <%= form.hidden_field :match_id, id: :post_match_id,value: @match_id %>
+  </div>
+
+  <div class="field">
+
+    <%= form.hidden_field :from_id, id: :post_from_id,value: @user_id %>
+  </div>
+  
+  <div class="field">
+
+    <%= form.hidden_field :to_id, id: :post_to_id,value: @likee_id %>
   </div>
 
   <div class="field">

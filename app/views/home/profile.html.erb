@@ -5,7 +5,7 @@
     <%= liked_user[0].inspect%>
     <%= link_to '좋아요 취소!', like_delete_path(current_user.id, liked_user[0].id), method: :delete%>
     <% if liked_user[1]%>
-        <%= link_to '매칭됨!!!!', '#'%>
+        <%= link_to '매칭됨!!!!', post_new_match_path(liked_user[2], current_user.id, liked_user[0].id)%>
     <% end%>
     <br>
 <% end%>
