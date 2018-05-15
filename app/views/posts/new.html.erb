@@ -27,3 +27,5 @@
 <% end%>
 
 <%= render 'form', post: @post %>
+
+<%= link_to '프로필페이지로', user_profile_path(current_user.id)%>
