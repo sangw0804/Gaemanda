@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+  before_action :is_logged?, only: [:show_user, :profile]
   before_action :get_liked_users , only: [:show_user, :profile]
 
   def index
@@ -33,8 +34,14 @@ class HomeController < ApplicationController
     if likes
       @liked_users = Array.new
       likes.each do |like|
-        @liked_users.push([User.find(like.likee),like.matched,like.matched])
+        @liked_users.push([User.find(like.likee),like.matched])
       end
+    end
+  end
+
+  def is_logged?
+    if !user_signed_in?
+      redirect_to root_path
     end
   end
 

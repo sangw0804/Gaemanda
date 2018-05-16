@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
+  before_action :is_logged?
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+
 
   # GET /posts
   # GET /posts.json
@@ -74,5 +76,11 @@ class PostsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
       params.require(:post).permit(:match_id, :content,:from_id,:to_id)
+    end
+
+    def is_logged?
+      if !user_signed_in?
+        redirect_to root_path
+      end
     end
 end

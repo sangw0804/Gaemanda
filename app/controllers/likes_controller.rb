@@ -34,6 +34,11 @@ class LikesController < ApplicationController
       like.update_attributes(matched: nil)
       tempsort = [like.liker,like.likee].sort
       match = Match.where(user1: tempsort[0]).where(user2: tempsort[1]).first
+      if !(old_posts = Post.where(match_id: match.id)).empty?
+        old_posts.each do |old_post|
+          old_post.destroy
+        end
+      end
       match.destroy
     end
   end
