@@ -1,4 +1,5 @@
 <section>
+<<<<<<< HEAD
 
 <div class="j-section1">
 <%=image_tag('KakaoTalk_Photo_2018-05-19-16-18-43.1', class: 'summer')%>
@@ -10,6 +11,17 @@
 		<%= link_to '찾아주기', new_user_registration_path, class:"btn bg-info text-white j-doggo2"%>
 		<% end%>
 </div>
+=======
+    <%=image_tag('KakaoTalk_Photo_2018-05-19-16-18-43.1', class: 'card-img')%>
+    <div class="float-left lalala">
+        <strong class="align-self-sm-end card-title text-white font-weight-bold lululu">여름이는 <br> 자신의 짝을 <br> 찾고 싶어합니다.</strong>
+		<% if user_signed_in?%>
+		<%= link_to '찾아주기', show_user_path(current_user.id), class:"btn bg-info text-white lilili"%>
+		<% else%>
+		<%= link_to '찾아주기', new_user_registration_path, class:"btn bg-info text-white lilili"%>
+		<% end%>
+	</div>
+>>>>>>> 9ced0f645ff01bddf74181a0056175578e4ad7f7
 </section>
 
 

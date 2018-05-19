@@ -17,9 +17,15 @@
  
         <div class="navbar-nav d-flex flex-row">
           <% if current_user %>
+<<<<<<< HEAD
           <%= link_to "매칭현황", matching_path(current_user.id), class: "nav-item nav-link text-white mr-3"%>          
           <%= link_to "프로필", user_profile_path(current_user.id), class: "nav-item nav-link text-white mr-3"%>
           <%= link_to "로그아웃", destroy_user_session_path, method: :delete, class: "nav-item nav-link text-white mr-3" %>
+=======
+          <%= link_to "My Profile", user_profile_path(current_user.id), class: "nav-item nav-link text-white"%>
+          <%= link_to "Matching", matching_path(current_user.id), class: "nav-item nav-link text-white"%>
+          <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "nav-item nav-link text-white" %>
+>>>>>>> 9ced0f645ff01bddf74181a0056175578e4ad7f7
           <% else %>
           <%= link_to "회원가입", new_user_registration_path, class: "nav-item nav-link text-white mr-3"%>
           <%= link_to "로그인", new_user_session_path, class: "nav-item nav-link text-white mr-3" %>
