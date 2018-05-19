@@ -9,10 +9,9 @@
     <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans" rel="stylesheet">
   </head>
 
-  <body>
-      <nav class="navbar navbar-expand-lg navbar-light d-flex justify-content-between" style="background-color: #FA7C92;">
-        <div>
-        <%=image_tag('roaksek1.png', class: 'img')%>
+  <body style="background-color: rgb(242, 242, 242);">
+      <nav class="navbar navbar-expand-lg navbar-light d-flex justify-content-between" style="background-color: salmon;">
+        <a href="/"><%=image_tag('roaksek1.png', class: 'img')%></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -21,7 +20,7 @@
         <div class="navbar-nav">
           <% if current_user %>
           <%= link_to "My Profile", user_profile_path(current_user.id), class: "nav-item nav-link text-white"%>
-          <%= link_to "Matching", show_user_path(current_user.id), class: "nav-item nav-link text-white"%>
+          <%= link_to "Matching", matching_path(current_user.id), class: "nav-item nav-link text-white"%>
           <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "nav-item nav-link text-white" %>
           <% else %>
           <%= link_to "Register", new_user_registration_path, class: "nav-item nav-link text-white"%>

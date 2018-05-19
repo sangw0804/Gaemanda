@@ -1,0 +1,18 @@
+<div class="d-flex flex-column align-items-center">
+  <div>
+   내가 좋아요 누른 유저 : 
+      <% @liked_users.each do |liked_user|%>
+    <div class="user-box">
+      <%= liked_user[0].inspect%>
+      <%= liked_user[0].dog_name%>
+      <%= image_tag liked_user[0].image.t%>
+        <%= link_to '좋아요 취소!', like_delete_path(current_user.id, liked_user[0].id), method: :delete%>
+      <% if liked_user[1]%>
+        <%= link_to '매칭됨!!!!', post_new_match_path(liked_user[1], current_user.id, liked_user[0].id)%>
+      <% end%>
+    </div>
+    <br>
+      <% end%>
+  </div>
+</div>
+
