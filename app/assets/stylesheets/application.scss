@@ -8,3 +8,13 @@
     height: 50px;
     width: auto;
 }
+
+.box {
+    background-color: rgb(242, 242, 242);
+    width: 600px;
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    border: solid rgb(217, 217, 217) 3px;
+    border-radius: 5%;
+}

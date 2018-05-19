@@ -1,145 +1,108 @@
-<body class="bg-light">
+<div class="box container mt-5 align-self-center">
 
-    <div class="container">
-      <div class="py-5 text-center">
-        <img class="d-block mx-auto mb-4" 
-        src="" 
-        alt="" width="72" height="72">
-
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
-
-
-  <div class="container">
-    
-      <div class="py-5 text-center">
-        <img class="d-block mx-auto mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-        <h2>개만다와 함께</h2>
-        <p class="lead">반려견에게 행복한 생활을 선물해주세요 </p>
-      </div>
-
-  <%#아이디  %>
-<h4 class="mb-3">강아지 정보입력</h4>
-
-  <div class="col-md-6 mb-3">
-    <label for="이름">이름</label>
-      <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
-        <div class="invalid-feedback">
-         우리 강아지 이름을 써주세요
-        </div>
-  </div>
-
-    <div class="col-md-6 mb-3">
-    <label for="이름">품종</label>
-      <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
-        <div class="invalid-feedback">
-          우리 강아지 품종을 써주세요
-        </div>
-  </div>
   
-<div class="col-md-6 mb-3">
-    <label for="성별">성별</label>
+  <br><%=image_tag('logo.png')%>
 
-  <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-  <label class="form-check-label" for="defaultCheck1">
-      수컷
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-  <label class="form-check-label" for="defaultCheck1">
-      암컷
-  </label>
-</div>
-  
- <br>
-  <div class="form-inputs col-md-6 mb-3">
-    <label for = "Email">주인님의 이메일을 알려주세요!</label>
-      <%= f.input :email, required: true, autofocus: true, class:"form-group"%>
+  <div>
+    <br><p>강아지 이름</p>
+    <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+    <div class="invalid-feedback">
+      우리 강아지 이름을 써주세요
+    </div>
+  </div>
+  <br>
+
+  <p>성별</p>
+  <div class="btn-group btn-group-toggle" data-toggle="buttons">
+    <label class="btn btn-secondary active">
+      <input type="radio" name="options" id="option1" autocomplete="off" checked> 남
+    </label>
+    <label class="btn btn-secondary">
+      <input type="radio" name="options" id="option2" autocomplete="off"> 여
+    </label>
   </div>
 
-  <div class="form-inputs col-md-6 mb-3">
+  <br> <br>
+
+  <div class="form-inputs">
+    <p>주인님의 이메일을 알려주세요!</p>
+    <%= f.input :email, required: true, autofocus: true, class:"form-group"%>
+  </div>
+
+  <br>
+  <div class="form-inputs">
     <label for = "password">주인님의 비밀번호를 알려주세요!</label>
-            <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+    <br> <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
 
-  <br><div class="form-inputs col-md-6 mb-3">
-    <label for = "password">한 번만 더 비밀번호를 알려주세요!</label>  
+    <br>
+    <div class="form-inputs">
+      <label for = "password">한 번만 더 비밀번호를 알려주세요!</label>  
       <%= f.input :password_confirmation, required: true %>
-    
-       <%= f.file_field :image, accept: 'image/png,image/gif,image/jpeg' %>
+    </div>
   </div>
 
-<%# 거주 지역 %>
-   <div class="row">
-              <div class="col-md-5 mb-3">
-                <label for="country">주인님이 매칭을 원하시는 지역은 어디인가요?</label>
-                <select class="custom-select d-block w-100" id="country" required>
-                  <option value="">Choose...</option>
-                  <option>서울특별시</option>
-                  <option>부산광역시</option>
-                  <option>대구광역시</option>
-                  <option>인천광역시</option>
-                  <option>광주광역시</option>
-                  <option>대전광역시</option>
-                  <option>울산광역시</option>
-                </select>
-                <div class="invalid-feedback">
-                 다시 골라주세요
-                </div>
-              
-  <%# 광고성 글 - 애완용품 구매 유도 %>
-
-
-
-
-  <div class="form-actions">
-    <%= f.button :submit, "회원가입 멍!" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
-
-
-      <footer class="my-5 pt-5 text-muted text-center text-small">
-        <p class="mb-1">&copy; 2017-2018 개만다</p>
-        <ul class="list-inline">
-          <li class="list-inline-item"><a href="#">Privacy</a></li>
-          <li class="list-inline-item"><a href="#">Terms</a></li>
-          <li class="list-inline-item"><a href="#">Support</a></li>
-        </ul>
-      </footer>
+  <br><p> 강아지 사진 첨부<%= f.file_field :image, accept: 'image/png,image/gif,image/jpeg'%></p>
+  <%# 거주 지역 %>
+  <div class="row">              
+    <br><label for="country">주인님이 매칭을 원하시는 지역은 어디인가요?</label>
+    <select class="custom-select d-block w-100" id="country" required>
+      <option value="">Choose...</option>
+      <option>서울특별시</option>
+      <option>부산광역시</option>
+      <option>대구광역시</option>
+      <option>인천광역시</option>
+      <option>광주광역시</option>
+      <option>대전광역시</option>
+      <option>울산광역시</option>
+    </select>
+    <div class="invalid-feedback">
+      다시 골라주세요
     </div>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-    <script src="../../../../assets/js/vendor/popper.min.js"></script>
-    <script src="../../../../dist/js/bootstrap.min.js"></script>
-    <script src="../../../../assets/js/vendor/holder.min.js"></script>
-    <script>
-      // Example starter JavaScript for disabling form submissions if there are invalid fields
-      (function() {
-        'use strict';
+    <%# 광고성 글 - 애완용품 구매 유도 %>
 
-        window.addEventListener('load', function() {
-          // Fetch all the forms we want to apply custom Bootstrap validation styles to
-          var forms = document.getElementsByClassName('needs-validation');
 
-          // Loop over them and prevent submission
-          var validation = Array.prototype.filter.call(forms, function(form) {
-            form.addEventListener('submit', function(event) {
-              if (form.checkValidity() === false) {
-                event.preventDefault();
-                event.stopPropagation();
-              }
-              form.classList.add('was-validated');
-            }, false);
-          });
-        }, false);
-      })();
-    </script>
-  </body>
-</html>
+    <br><br>
+    <div class="form-actions">
+      <%= f.button :submit, "회원가입 멍!" %>
+    </div>
+  </div>  
+  <% end %>
+
+  <br>
+
+</div>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+<script src="../../../../assets/js/vendor/popper.min.js"></script>
+<script src="../../../../dist/js/bootstrap.min.js"></script>
+<script src="../../../../assets/js/vendor/holder.min.js"></script>
+<script>
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+'use strict';
+
+window.addEventListener('load', function() {
+// Fetch all the forms we want to apply custom Bootstrap validation styles to
+var forms = document.getElementsByClassName('needs-validation');
+
+// Loop over them and prevent submission
+var validation = Array.prototype.filter.call(forms, function(form) {
+form.addEventListener('submit', function(event) {
+if (form.checkValidity() === false) {
+event.preventDefault();
+event.stopPropagation();
+}
+form.classList.add('was-validated');
+}, false);
+});
+}, false);
+})();
+</script>
+
