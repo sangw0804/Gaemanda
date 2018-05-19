@@ -38,8 +38,8 @@
   </div>
   
 <div class="col-md-6 mb-3">
-    <%= f.radio_button :is_male_dog, '수컷',checked: true%>
-    <%= f.radio_button :is_male_dog,'암컷'%>
+    <%= f.radio_button :is_male_dog, true,checked: true%>
+    <%= f.radio_button :is_male_dog, false%>
 </div>
   
  <br>
@@ -57,6 +57,7 @@
   </div>
 
 
+  <%= f.text_field :introduction%>
 <%# 거주 지역 %>
    <div class="row">
               <div class="col-md-5 mb-3">

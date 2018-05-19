@@ -20,7 +20,7 @@
         <div class="navbar-nav">
           <% if current_user %>
           <%= link_to "My Profile", user_profile_path(current_user.id), class: "nav-item nav-link text-white"%>
-          <%= link_to "Matching", show_user_path(current_user.id), class: "nav-item nav-link text-white"%>
+          <%= link_to "Matching", matching_path(current_user.id), class: "nav-item nav-link text-white"%>
           <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "nav-item nav-link text-white" %>
           <% else %>
           <%= link_to "Register", new_user_registration_path, class: "nav-item nav-link text-white"%>

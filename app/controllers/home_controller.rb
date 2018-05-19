@@ -51,6 +51,10 @@ class HomeController < ApplicationController
   end
 
   def matching
+    @recent_messages = Array.new
+    @liked_users.each do |liked_user|
+      @recent_messages[liked_user.first.id] = Post.where(match_id: liked_user[1]).last
+    end
   end
 
   def get_liked_users
