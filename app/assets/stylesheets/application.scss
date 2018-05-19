@@ -1,6 +1,9 @@
 
 @import 'bootstrap';
 @import url('https://fonts.googleapis.com/css?family=Black+Han+Sans');
+*{
+    font-family: 'Do Hyeon', sans-serif;
+}
 .salmon {
     color: salmon;
 }
@@ -8,29 +11,58 @@
 .font-han {
     font-family: 'Black Han Sans', sans-serif;
 }
+
+.font-dohyeon{
+    font-family: 'Do Hyeon', sans-serif;
+}
+
+.font-nanum{
+    font-family: 'Nanum Gothic', sans-serif;
+}
 .img {
     height: 50px;
     width: auto;
 
 }
 
-
-.info {
-    margin-left: 250px;
+.summer {
+    width: 100%;
+    height: auto
 }
 
 .img-thumbnail rounded float-left {
     margin-right: 20px;
 }
-
+.j-section1{
+    width: 100%;
+    height: auto;
+}
 .lalala {
     position: absolute;
-    width: 560px;
-    height:  350px;
+    width: 60%;
+    height:  60%;
     z-index: 10;
     background-color: rgba(0, 0, 0, 0.3);
     top: 130px;
     left: 0px;
+}
+.j-doggo{
+    position: absolute;
+    left: 0px;
+    padding-left: 30px;
+    width: 40%;
+    height: 60%;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.3);
+    top: 130px;
+    font-size: 370%;
+}
+
+.j-doggo2{
+    position: absolute;
+    z-index: 11;
+    top: 410px;
+    left: 30px;
 }
 
 .lululu {
@@ -43,30 +75,48 @@
 
 .lilili {
     position: absolute;
-    margin-top: 280px;
-    margin-left: 30px;
-    padding-right: 40px;
-    padding-left: 40px;
+    font-family: 'Do Hyeon', sans-serif;
 }
 
 .second {
-    margin: 20px;
+    padding-left: 80px;
+    padding-right: 40px;
     background-color: white;
 }
-.info {
-    align-items: center;
+
+.info-title {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .third {
-
+    padding-left: 80px;
+    padding-right: 40px;
+    background-color: lightyellow;
+    background-size: 100%;
 }
 
-
+.fourth {
+    margin-left: 80px;
+    margin-right: 40px;
+}
 
 .login-logo {
     height: 40px;
     width: auto;
     margin-bottom: 5px;
+}
+
+.rounded-1 {
+    weight: 150px;
+    height: 150px;
+}
+
+.third-text {
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 15pt;
 }
 
 .box {

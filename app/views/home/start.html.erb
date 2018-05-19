@@ -1,37 +1,57 @@
-
 <section>
-    <%=image_tag('KakaoTalk_Photo_2018-05-19-16-18-43.1', class: 'card-img')%>
-    <div class="float-left lalala">
-        <strong class="align-self-sm-end card-title text-white font-weight-bold lululu">여름이는 <br> 자신의 짝을 <br> 찾고 싶어합니다.</strong>
-        <form action='/users/sign_in'>
-                <input type='submit' value='찾아주기' class="btn bg-info text-white lilili">
-        </form>
-    </div>
+
+<div class="j-section1">
+<%=image_tag('KakaoTalk_Photo_2018-05-19-16-18-43.1', class: 'summer')%>
+<div class="text-white font-weight-bold j-doggo">여름이는 <br> 자신의 짝을 <br> 찾고 싶어합니다.</div>
+	<% if user_signed_in?%>
+	<div class = "button">
+		<%= link_to '찾아주기', show_user_path(current_user.id), class:"btn bg-info text-white j-doggo2"%>
+		<% else%>
+		<%= link_to '찾아주기', new_user_registration_path, class:"btn bg-info text-white j-doggo2"%>
+		<% end%>
+</div>
 </section>
 
 
 <section class="second">
-    <div>
-        <%=image_tag('dogkiss', class: 'img-thumbnail rounded float-left')%>
-        <div class="info">
-            <h4 class="font-weight-bold i"> 서비스 소개 </h4>
-            <p> 개만다는 사랑이 필요한 강아지에게 어울리는 짝을 찾아주는 서비스예요. 우리가 사랑하는 강아지의 행복에 기여하는 것이 개만다의 목적이랍니다! </p>
-        </div>
+    <div class="d-flex flex-column">
+            <h4 class="info-title font-dohyeon"> 서비스 소개 </h4>
+			<link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet">
+			<div class="d-flex flex-row mt-2">
+				<%=image_tag('dogkiss', class: ' rounded float-left')%>
+      	        <div class="d-flex flex-column justify-content-center font-nanum">
+					<p style="font-size: 20px"> "개만다는 사랑이 필요한 강아지에게 어울리는 짝을 찾아주는 서비스예요. <br> 우리가 사랑하는 강아지의 행복에 기여하는 것이 바로 개만다의 목적이랍니다!" </p>
+					<link href="https://fonts.googleapis.com/css?family=Black+Han+Sans|Do+Hyeon|Nanum+Gothic" rel="stylesheet">
+				</div>
+			</div>
     </div>
 </section>
 
 <section class="third">
-    <div>
-        <h4 class="font-weight-bold"> 이용방법 </h4>
-        <p> 1. 강아지 프로필을 등록해주세요. </p> <td>
-        <p> 2. 강아지와 함께 짝을 선택해주세요. </p> <td>
-        <p> 3. 상대 견주와 연락하여 만남을 주선하세요 </p> <td>
+    <div class="d-flex flex-column">
+            <div><h4 class="info-title font-dohyeon ml-3 rounded"> 이용방법 </h4></div>
+			<div class="d-flex flex-row justify-content-around font-nanum">
+				<div class="d-flex flex-column justify-content-center">
+					<div class="third-text">1. 강아지 프로필을 <br> 등록해주세요.</div>
+					<div><%=image_tag('third_one', class: ' rounded-1')%></div>
+				</div>
+				<div class="d-flex flex-column justify-content-center">
+					<div class="third-text">2. 강아지와 함께 짝을 <br> 선택해주세요.</div>
+					<div><%=image_tag('third_two', class: ' rounded-1')%></div>
+				</div>
+				<div class="d-flex flex-column justify-content-center">
+					<div class="third-text">3. 상대 견주와 연락하여 <br> 만남을 주선하세요.</div>
+					<div><%=image_tag('third_three', class: ' rounded-1')%></div>
+				</div>
+			</div>
     </div>
 </section>
 
-<section>
-    <div>
-        <h4> 매칭 현황 </h4>
+<section class="fourth">
+    <div class="d-flex flex-column">
+        <div><h4 class="info-title font-dohyeon"> 
+			<link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet">매칭 현황 </h4>
+		</div>
     </div>
 </section>
 
