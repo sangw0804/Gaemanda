@@ -14,9 +14,9 @@
 
 }
 
-
-.info {
-    margin-left: 250px;
+.summer {
+    width: 100%;
+    height: auto;
 }
 
 .img-thumbnail rounded float-left {
@@ -43,30 +43,50 @@
 
 .lilili {
     position: absolute;
-    margin-top: 280px;
+    margin-top: 240px;
     margin-left: 30px;
     padding-right: 40px;
     padding-left: 40px;
 }
 
 .second {
-    margin: 20px;
-    background-color: white;
+    margin-left: 80px;
+    margin-right: 40px;
 }
-.info {
-    align-items: center;
+
+.info-title {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .third {
-
+    margin-left: 80px;
+    margin-right: 40px;
+    background-color: lightyellow;
+    background-size: 100%;
 }
 
-
+.fourth {
+    margin-left: 80px;
+    margin-right: 40px;
+}
 
 .login-logo {
     height: 40px;
     width: auto;
     margin-bottom: 5px;
+}
+
+.rounded-1 {
+    weight: 150px;
+    height: 150px;
+}
+
+.third-text {
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 15pt;
 }
 
 .box {
