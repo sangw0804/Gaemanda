@@ -42,11 +42,11 @@
       <p>성별</p>
   </div>
   <div class="col">
-      <div class="btn-group btn-group-toggle" data-toggle= "buttons">
-      <label class="btn btn-secondary active">수컷
+      <div class="btn-group btn-group-toggle " data-toggle= "buttons">
+      <label class="btn btn-secondary btn-outline-info active">수컷
       <%= f.radio_button :is_male_dog, true,checked: true%>
       </label>
-      <label class="btn btn-secondary">암컷
+      <label class="btn btn-secondary btn-outline-info">암컷
       <%= f.radio_button :is_male_dog,false%></label>
       </div>
   </div>
@@ -142,4 +142,4 @@
         }, false);
       })();
     </script>
-</html>
+
