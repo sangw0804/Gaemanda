@@ -1,4 +1,4 @@
-현재유저 : <%= current_user.inspect%>
+현재유저 : <%= current_user.inspect%><%= image_tag current_user.image%>
 <br>
 내가 좋아요 누른 유저 : 
 <% @liked_users.each do |liked_user|%>
