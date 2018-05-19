@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
-  before_action :is_logged?, only: [:show_user, :profile]
-  before_action :get_liked_users , only: [:show_user, :profile]
+  before_action :is_logged?, only: [:show_user,:show_ajax, :profile]
+  before_action :get_liked_users , only: [:show_user,:show_ajax, :profile]
 
   def index
   end
@@ -23,6 +23,7 @@ class HomeController < ApplicationController
     else
       @filtered_randomUsers = randomUsers
     end
+    @filtered_randomUser = @filtered_randomUsers.sample(1).first
   end
 
   def show_ajax
@@ -43,6 +44,7 @@ class HomeController < ApplicationController
     else
       @filtered_randomUsers = randomUsers
     end
+    @filtered_randomUser = @filtered_randomUsers.sample(1).first
   end
 
   def profile
