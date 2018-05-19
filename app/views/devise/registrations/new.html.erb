@@ -1,94 +1,116 @@
-<body class="bg-light">
-
-    <div class="container">
-      <div class="py-5 text-center">
-        <img class="d-block mx-auto mb-4" 
-        src="" 
-        alt="" width="72" height="72">
-
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<div class="box-2 container">
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
+  <%# <div class="container"> %>
+  <div class="mt-4 text-center">
+  <%= image_tag("logo.png") %>
 
-  <div class="container">
-    
-      <div class="py-5 text-center">
-        <img class="d-block mx-auto mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-        <h2>개만다와 함께</h2>
-        <p class="lead">반려견에게 행복한 생활을 선물해주세요 </p>
-      </div>
+    <p class="lead mt-2">반려견에게 행복한 생활을 선물해주세요 </p>
+  </div>
 
   <%#아이디  %>
-<h4 class="mb-3">강아지 정보입력</h4>
-
-  <div class="col-md-6 mb-3">
-    <label for="이름">이름</label>
-      <%= f.input :dog_name, required: true%>
-        <div class="invalid-feedback">
-         우리 강아지 이름을 써주세요
-        </div>
+  <div class="row ml-1">
+    <h4>강아지 정보입력</h4>
+  </div>
+  <div class="row">
+    <div class="col-sm-3 mt-2">
+      <p>이름<p>
+    </div>
+    <div class="col mt-2">
+      <%= f.input :dog_name, required: true, label:false%>
+    </div>
+    <div class="invalid-feedback">
+      우리 강아지 이름을 써주세요
+    </div>
   </div>
 
-    <div class="col-md-6 mb-3">
-    <label for="이름">품종</label>
-      <%= f.input :dog_kind, required: true%>
-        <div class="invalid-feedback">
-          우리 강아지 품종을 써주세요
-        </div>
+  <div class="row">
+    <div class="col-sm-3">
+      <p>품종</p>
+    </div>
+    <div class="col">
+      <%= f.input :dog_kind, required: true, label:false%>
+      <div class="invalid-feedback">
+        우리 강아지 품종을 써주세요
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+  <div class="col-sm-3">
+      <p>성별</p>
+  </div>
+  <div class="col">
+      <div class="btn-group btn-group-toggle" data-toggle= "buttons">
+      <label class="btn btn-secondary active">수컷
+      <%= f.radio_button :is_male_dog, true,checked: true%>
+      </label>
+      <label class="btn btn-secondary">암컷
+      <%= f.radio_button :is_male_dog,false%></label>
+      </div>
+  </div>
   </div>
   
-<div class="col-md-6 mb-3">
-    <%= f.radio_button :is_male_dog, true,checked: true%>
-    <%= f.radio_button :is_male_dog, false%>
-</div>
-  
+
  <br>
-  <div class="form-inputs col-md-6 mb-3">
-      <%= f.input :email, required: true, autofocus: true, class:"form-group"%>
-  </div>
-
-  <div class="form-inputs col-md-6 mb-3">
-            <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-
-  <br><div class="form-inputs col-md-6 mb-3"> 
-      <%= f.input :password_confirmation, required: true %>
+ <div class="row">
+    <div class="form-inputs col-sm-3">
+      <p>Email</p>  
+    </div>
+        <div class="col">
+          <%= f.input :email, required: true, autofocus: true, class:"form-group", label:false %>
+        </div>
+  </div>  
     
-       <%= f.file_field :image, accept: 'image/png,image/gif,image/jpeg' %>
-  </div>
+  <div class="row">  
+    <div class="form-inputs col-sm-3">
+     <p>비밀번호</p>
+    </div>  
+      <div class="col">
+        <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), label:false%>
+      </div>
+  </div>    
 
+  <div class="row">
+      <div class="form-inputs col-sm-3">
+        <p>비번 재입력</p>
+      </div>  
+      <div class="col">
+        <%= f.input :password_confirmation, required: true, label:false %>      
+      </div>  
+  </div>
+  <div class="row">
+    <div class="col-sm-3">
+      <p>프로필 사진</p>
+    </div>
+    <div class="col">
+      <%= f.file_field :image, accept: 'image/png,image/gif,image/jpeg' %>
+    </div>
+  </div>
 
   <%= f.text_field :introduction%>
 <%# 거주 지역 %>
-   <div class="row">
-              <div class="col-md-5 mb-3">
-                <label for="country">주인님이 매칭을 원하시는 지역은 어디인가요?</label>
-                <%= f.select :location, ['서울특별시', '부산광역시']%>
-                <div class="invalid-feedback">
-                 다시 골라주세요
-                </div>
-              
-  <%# 광고성 글 - 애완용품 구매 유도 %>
-
-
-
-
-  <div class="form-actions">
-    <%= f.button :submit, "회원가입 멍!" %>
+  <div class="row">
+      <div class="col">
+        <label for="country">주인님이 매칭을 원하시는 지역은 어디인가요?</label>
+      </div>  
   </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
-
-
-      <footer class="my-5 pt-5 text-muted text-center text-small">
-        <p class="mb-1">&copy; 2017-2018 개만다</p>
-        <ul class="list-inline">
-          <li class="list-inline-item"><a href="#">Privacy</a></li>
-          <li class="list-inline-item"><a href="#">Terms</a></li>
-          <li class="list-inline-item"><a href="#">Support</a></li>
-        </ul>
-      </footer>
+  <div class="row col">
+        <%= f.select :location, ['서울특별시', '부산광역시', '대구광역시', '인천광역시', '광주광역시', '대전광역시','울산광역시']%>
+        <div class="invalid-feedback">
+            다시 골라주세요
+        </div>
+  </div>
+  <br>
+  <%# 광고성 글 - 애완용품 구매 유도 %>
+    <div class="d-flex flex-row justify-content-center">
+      <%= f.button :submit, "회원가입 멍!" %>
     </div>
+    <br>
+    <br>
+<% end %>
+</div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -120,5 +142,4 @@
         }, false);
       })();
     </script>
-  </body>
 </html>
