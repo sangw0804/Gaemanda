@@ -5,6 +5,12 @@ class HomeController < ApplicationController
   def index
   end
 
+  def about
+  end
+  
+  def start
+  end
+
   def show_user
     randomUsers  = User.where.not(id: current_user.id).order("RANDOM()")
     if @liked_users
