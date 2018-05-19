@@ -11,12 +11,12 @@
 
 
   <body>
-      <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #FA7C92;">
+      <nav class="navbar navbar-expand-lg navbar-light sticky-top d-flex justify-content-between" style="background-color: salmon;">
         <%=image_tag('roaksek1.png', class: 'img')%>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+ 
         <div class="navbar-nav">
           <% if current_user %>
           <%= link_to "My Profile", user_profile_path(current_user.id), class: "nav-item nav-link text-white"%>
@@ -28,7 +28,7 @@
 
         <% end %>
         </div>
-      </div>
+
 
       </nav>
     <%= yield %>
