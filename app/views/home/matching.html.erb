@@ -11,7 +11,9 @@
             <%=  liked_user[0].is_male_dog? ? "수컷" : "암컷"%>
             </div>
             <div>
+            <% if liked_user[1]%>
             <%= @recent_messages[liked_user[0].id].content%>
+            <% end%>
             </div>
         </div>
      
