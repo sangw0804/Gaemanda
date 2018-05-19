@@ -1,2 +1,2 @@
-$('#user_panel').html('<%= @filtered_randomUser.inspect %><%= image_tag(@filtered_randomUser.image)%>');
+$('#user_panel').html('<%= @filtered_randomUser.dog_name %><%= @filtered_randomUser.dog_kind%><%= @filtered_randomUser.is_male_dog%><%= image_tag(@filtered_randomUser.image.thumb)%>');
 $('#likeBtn').attr('href', '/like/update/<%= current_user.id%>/<%= @filtered_randomUser.id%>');
