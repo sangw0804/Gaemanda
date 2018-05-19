@@ -100,7 +100,16 @@
     margin: auto;
     margin-top: 40px;
 }
-
+.box-2 {
+    background-color: white;
+    width: 600px;
+    display: flex;
+    justify-content: center;
+    border: solid rgb(217, 217, 217) 1px;
+    border-radius: 5%;
+    margin: auto;
+    margin-top: 40px;
+}
 .user-box {
     background-color: white;
     width: 700px;

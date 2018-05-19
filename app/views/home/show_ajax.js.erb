@@ -1,2 +1,3 @@
-$('#user_panel').html('<%= @filtered_randomUser.dog_name %><%= @filtered_randomUser.dog_kind%><%= @filtered_randomUser.is_male_dog%><%= image_tag(@filtered_randomUser.image.thumb)%>');
+$('#user_panel').html('<div class="d-flex"><div><%= @filtered_randomUser.dog_name%></div>,<div><%= @filtered_randomUser.dog_kind%></div>,<div><%= "수컷" if @filtered_randomUser.is_male_dog%><%= "암컷" unless @filtered_randomUser.is_male_dog%></div></div><%= image_tag @filtered_randomUser.image.thumb%>');
 $('#likeBtn').attr('href', '/like/update/<%= current_user.id%>/<%= @filtered_randomUser.id%>');
+$('#introduction').html(' <%= @filtered_randomUser.introduction%>');
