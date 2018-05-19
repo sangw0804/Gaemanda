@@ -10,13 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20180519151400) do
-=======
 
 ActiveRecord::Schema.define(version: 20180519151400) do
 
->>>>>>> 9ced0f645ff01bddf74181a0056175578e4ad7f7
 
   create_table "likes", force: :cascade do |t|
     t.integer "liker"
