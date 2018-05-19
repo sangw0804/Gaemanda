@@ -1,11 +1,6 @@
-<% showed_user = @filtered_randomUsers.sample(1).first%>
-<% if showed_user%>
-    <%= showed_user.inspect%>
+<div id="user_panel"><%= @filtered_randomUsers.sample(1).first.inspect%></div>
 
-    <%= link_to '맘에드네', like_update_path(current_user.id, showed_user.id), method: :post%>
-    <%= link_to '다음!', show_user_path(current_user.id)%>
-<% else%>
-    더 이상 매칭 가능한 유저가 없어요...ㅜㅠ
-<% end%>
+    <%= link_to '맘에드네', like_update_path(current_user.id, @filtered_randomUsers.sample(1).first.id), method: :post%>
+    <%= link_to '다음!', {action: :show_ajax}, remote: true%>
 
 <%= link_to '메인으로', root_path%>

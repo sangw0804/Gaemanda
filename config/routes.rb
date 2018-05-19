@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   get 'home/show_user/:user_id' => 'home#show_user' ,as: 'show_user'
 
+  get 'home/show_ajax' => 'home#show_ajax' ,as: 'show_ajax'
+
   post 'like/update/:liker_id/:likee_id' => 'likes#update' , as: 'like_update'
 
   delete 'like/delete/:liker_id/:likee_id' => 'likes#delete' , as: 'like_delete'
