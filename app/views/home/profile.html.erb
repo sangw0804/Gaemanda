@@ -1,6 +1,16 @@
-현재유저 : <%= current_user.inspect%><%= image_tag current_user.image.thumb%>
-<br>
-
-
-<%= link_to '개인정보 수정', edit_user_registration_path%>
-<%= link_to '메인으로', root_path%>
+<div class="card mt-5 mx-auto" style="width: 20rem;">
+  <%=image_tag('favorites.jpeg', class: 'card-img-top')%>
+  <div class="card-body">
+    <h5 class="card-title"><%= current_user.dog_name %></h5>
+    <p class="card-text">하고 싶은 말 구구절절 쓰면 됩니다. 근데 회원가입에 이런 말 쓰는데가 있었나.. 잘 모르겠음</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">종류 :<%= current_user.dog_kind %></li>
+    <li class="list-group-item">성별 :<%= "수컷" if current_user.is_male_dog%><%= "암컷" unless current_user.is_male_dog%></li>
+    <li class="list-group-item">이메일 :<%= current_user.email %></li>
+  </ul>
+  <div class="card-body text-center">
+    <%= link_to '개인정보 수정', edit_user_registration_path, class: "card-link salmon"%>
+    <%= link_to '메인으로', root_path, class: "card-link salmon"%>
+  </div>
+</div>
