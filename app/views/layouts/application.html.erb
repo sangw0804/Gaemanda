@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html style="background-color: white">
   <head>
-    <title>Gaemanda</title>
+    <title>개만다 :: 개도 아무나 만나지 않는다.</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -10,7 +10,7 @@
   </head>
 
 
-  <body style="background-color: rgb(242,242,242);">
+  <body style="background-color: rgb(242,242,242);" class='body'>
       <nav class="navbar navbar-expand-lg navbar-light sticky-top d-flex justify-content-between" style="background-color: salmon;">
         <%=image_tag('roaksek1.png', class: 'img')%>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,20 +30,16 @@
         </div>
 
 
-      </nav>
-    <%= yield %>
-    <nav class="align-bottom">
-      <div class="d-flex justify-content-between mt-5 py-3" style="background-color: #5E5E5E;" >
-        <div class="d-flex px-0 text-white" style="list-style-type: none;">Gaemanda
-        </div>
-        <div class="d-flex px-0 text-white" style="list-style-type: none;">
-          <a href="https://open.kakao.com/o/sS3QsUM" class="text-white">Contact</a>
-        </div>
-        <div class="d-flex px-0 text-white" style="list-style-type: none;">Support
-        </div>
+      </nav>  
+      <div style="min-height: 120vh;">  
+        <%= yield %>
       </div>
-    </nav>
-
+    <div class="footer d-flex justify-content-center text-gray border-top border-gray-light">
+        <div class="mr-4"><a href="/">Gaemanda</a></div>
+        <div class="mr-4"> <a href="https://open.kakao.com/o/sS3QsUM">Contact</a></div>
+        <div class="mr-4"><a href="home/about">About</a></div>
+    </div>
+    <p class="copyright text-black">copyright: GroupFour</p>
   </body>
 </html>
 

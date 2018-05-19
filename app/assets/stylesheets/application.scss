@@ -43,8 +43,8 @@
 
 .lilili {
     position: absolute;
-    margin-top: 240px;
-    margin-left: 30px;
+    margin-top: 260px;
+    margin-left: 20px;
     padding-right: 40px;
     padding-left: 40px;
 }
@@ -118,6 +118,19 @@
     border-radius: 10px;
     display: flex;
     justify-content: center;
-
 }
 
+.footer {
+    margin-top: 10px;
+}
+
+.mr-4 {
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.copyright {
+    font-size: 9pt;
+    margin-top: 10px;
+    text-align: center;
+}

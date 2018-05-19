@@ -18,6 +18,6 @@ Rails.application.routes.draw do
   get 'home/index' => 'home#index'
 
   get  'home/matching/:user_id' => 'home#matching', as: 'matching'
-
+  get 'home/about' => 'home#about'
   root 'home#start'
 end
