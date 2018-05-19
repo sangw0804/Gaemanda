@@ -1,6 +1,6 @@
-<div id="user_panel"><%= @filtered_randomUsers.sample(1).first.inspect%></div>
+<div id="user_panel"><%= @filtered_randomUser.inspect%><%= image_tag @filtered_randomUser.image%></div>
 
-    <%= link_to '맘에드네', like_update_path(current_user.id, @filtered_randomUsers.sample(1).first.id), method: :post%>
+    <%= link_to '맘에드네', like_update_path(current_user.id, @filtered_randomUser.id), method: :post, id:"likeBtn"%>
     <%= link_to '다음!', {action: :show_ajax}, remote: true,id:"nextBtn"%>
 
 <%= link_to '메인으로', root_path%>

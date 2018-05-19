@@ -9,6 +9,7 @@
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
+
   <div class="container">
     
       <div class="py-5 text-center">
@@ -65,6 +66,8 @@
   <br><div class="form-inputs col-md-6 mb-3">
     <label for = "password">한 번만 더 비밀번호를 알려주세요!</label>  
       <%= f.input :password_confirmation, required: true %>
+    
+       <%= f.file_field :image, accept: 'image/png,image/gif,image/jpeg' %>
   </div>
 
 <%# 거주 지역 %>

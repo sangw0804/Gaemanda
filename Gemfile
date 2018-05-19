@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'bootstrap', '~> 4.1.1'
 gem 'devise', '~> 4.4', '>= 4.4.3'
 gem 'rails_db', '~> 1.6'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -21,7 +22,11 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 
-gem 'bootstrap', '~> 4.1.1'
+gem 'carrierwave', '~> 1.0'
+gem 'mini_magick'
+gem 'fog-aws'
+gem 'figaro'
+
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
