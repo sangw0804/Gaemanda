@@ -10,9 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20180519113332) do
-  
+
   create_table "likes", force: :cascade do |t|
     t.integer "liker"
     t.integer "likee"
@@ -50,7 +49,6 @@ ActiveRecord::Schema.define(version: 20180519113332) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "image"
     t.string "dog_name"
     t.string "dog_kind"
     t.boolean "is_male_dog"
