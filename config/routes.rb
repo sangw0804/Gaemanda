@@ -16,5 +16,8 @@ Rails.application.routes.draw do
   get 'posts/new/:match_id/:user_id/:likee_id' => 'posts#new', as: 'post_new_match'
 
   get 'home/index' => 'home#index'
+
+  get  'home/matching/:user_id' => 'home#matching', as: 'matching'
+
   root 'home#start'
 end

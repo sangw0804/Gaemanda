@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
-  before_action :is_logged?, only: [:show_user,:show_ajax, :profile]
-  before_action :get_liked_users , only: [:show_user,:show_ajax, :profile]
+  before_action :is_logged?, only: [:show_user,:show_ajax, :profile, :matching]
+  before_action :get_liked_users , only: [:show_user,:show_ajax, :profile, :matching]
 
   def index
   end
@@ -48,7 +48,9 @@ class HomeController < ApplicationController
   end
 
   def profile
-    
+  end
+
+  def matching
   end
 
   def get_liked_users

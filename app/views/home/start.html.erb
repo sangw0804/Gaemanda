@@ -1,8 +1,10 @@
 <dev>
 	<h3> 여름이는 자신의 짝을 찾고 싶어합니다. </h3>
-	<form action='home/index/' >
-		<input type="submit" value="시작하기">
-	</form>
+	<% if user_signed_in?%>
+	<%= link_to '시작하기', show_user_path(current_user.id)%>
+	<% else%>
+	<%= link_to '시작하기', new_user_session_path%>
+	<% end%>
 </dev>
 
 <dev>
