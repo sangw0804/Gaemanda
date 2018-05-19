@@ -1,11 +1,17 @@
+
 @import 'bootstrap';
 @import url('https://fonts.googleapis.com/css?family=Black+Han+Sans');
+.salmon {
+    color: salmon;
+}
+
 .font-han {
     font-family: 'Black Han Sans', sans-serif;
 }
 .img {
     height: 50px;
     width: auto;
+
 }
 
 
@@ -54,3 +60,36 @@
 .third {
 
 }
+
+
+}
+
+.login-logo {
+    height: 40px;
+    width: auto;
+    margin-bottom: 5px;
+}
+
+.box {
+    background-color: white;
+    width: 600px;
+    height: 370px;
+    display: flex;
+    justify-content: center;
+    border: solid rgb(217, 217, 217) 3px;
+    border-radius: 5%;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.user-box {
+    background-color: white;
+    width: 700px;
+    height: 200px;
+    border: solid rgb(217, 217, 217) 2px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+
+}
+

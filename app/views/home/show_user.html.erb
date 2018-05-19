@@ -1,11 +1,22 @@
-<% showed_user = @filtered_randomUsers.sample(1).first%>
-<% if showed_user%>
-    <%= showed_user.inspect%>
 
-    <%= link_to '맘에드네', like_update_path(current_user.id, showed_user.id), method: :post%>
-    <%= link_to '다음!', show_user_path(current_user.id)%>
-<% else%>
-    더 이상 매칭 가능한 유저가 없어요...ㅜㅠ
-<% end%>
-
-<%= link_to '메인으로', root_path%>
+<div class="d-flex flex-row justify-content-center align-items-center">
+    <div class="d-flex flex-column align-items-center justify-content-center">
+        <div class="card">
+            <div class="d-flex">
+                <div id="user_panel" class="d-flex flex-column align-items-center whitebox">
+                    <div>
+                    <%= @filtered_randomUser.dog_name%>
+                    <%= @filtered_randomUser.dog_kind%>
+                    <%= @filtered_randomUser.is_male_dog%>
+                    </div>
+                    <%= image_tag @filtered_randomUser.image.thumb%>
+                </div>
+            </div>
+            <div class="card">
+                
+            </div>
+        </div>
+            <div style="z-index:3;position:relative;bottom:30px;"><%= link_to 'Like', like_update_path(current_user.id, @filtered_randomUser.id), method: :post, id:"likeBtn"%></div>
+    </div>
+            <div style="margin-left:30px;"><%= link_to '다음!', {action: :show_ajax}, remote: true,id:"nextBtn"%></div>
+</div>
