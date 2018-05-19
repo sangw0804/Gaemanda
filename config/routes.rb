@@ -19,5 +19,6 @@ Rails.application.routes.draw do
 
   get  'home/matching/:user_id' => 'home#matching', as: 'matching'
 
+  get 'home/about' => 'home#about'
   root 'home#start'
 end

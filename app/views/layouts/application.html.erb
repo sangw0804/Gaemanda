@@ -27,22 +27,17 @@
 
         <% end %>
         </div>
-
-
       </nav>
-    <%= yield %>
-    <nav class="align-bottom">
-      <div class="d-flex justify-content-around mt-5 py-3" style="background-color: #5E5E5E;" >
-
-        <div class="d-flex px-0 text-white" style="list-style-type: none;">Gaemanda
-        </div>
-        <div class="d-flex px-0 text-white" style="list-style-type: none;">
-          <a href="https://open.kakao.com/o/sS3QsUM" class="text-white">Contact</a>
-        </div>
-        <div class="d-flex px-0 text-white" style="list-style-type: none;">Support
-        </div>
+      
+      <div style="min-height: 120vh;">  
+        <%= yield %>
       </div>
-    </nav>
+      <div class="footer d-flex justify-content-center text-gray border-top border-gray-light">
+        <div class="mr-4"><a href="/">Gaemanda</a></div>
+        <div class="mr-4"> <a href="https://open.kakao.com/o/sS3QsUM">Contact</a></div>
+        <div class="mr-4"><a href="home/about">About</a></div>
+       </div>
+      <p class="copyright text-black">copyright: GroupFour</p>
 
   </body>
 </html>

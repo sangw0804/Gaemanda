@@ -3,14 +3,15 @@
 
 <div class="j-section1">
 <%=image_tag('KakaoTalk_Photo_2018-05-19-16-18-43.1', class: 'summer')%>
-<div class="text-white font-weight-bold j-doggo">여름이는 <br> 자신의 짝을 <br> 찾고 싶어합니다.</div>
-	<% if user_signed_in?%>
-	<div class = "button">
-		<%= link_to '찾아주기', show_user_path(current_user.id), class:"btn bg-info text-white j-doggo2"%>
-		<% else%>
-		<%= link_to '찾아주기', new_user_registration_path, class:"btn bg-info text-white j-doggo2"%>
-		<% end%>
-</div>
+	<div class="text-white j-doggo">여름이는 <br> 자신의 짝을 <br> 찾고 싶어합니다.</div>
+		<% if user_signed_in?%>
+		<div class = "button">
+			<%= link_to '찾아주기', show_user_path(current_user.id), class:"btn bg-info text-white j-doggo2"%>
+			<% else%>
+			<%= link_to '찾아주기', new_user_registration_path, class:"btn bg-info text-white j-doggo2"%>
+			<% end%>
+		</div>
+
 </section>
 
 
@@ -52,12 +53,11 @@
 </section>
 
 <section class="fourth">
-    <div class="d-flex flex-column">
-
-        <div><h4 class="info-title font-dohyeon"> 
-			<link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet">매칭 현황 </h4>
-		</div>
-
+    <div class="d-flex flex-column align-items-center font-dohyeon">
+        <div><h4 class="info-title"> 
+			<link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet">매칭 현황 </h4></div>
+		<div class="number">
+		<%=image_tag('heart', class: 'heart',style: "margin:0px;")%><%= Match.all.count %></div>
     </div>
 </section>
 
