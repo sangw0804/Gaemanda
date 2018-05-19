@@ -1,4 +1,4 @@
-<div class="d-flex flex-column talkbox">
+<div class="d-flex flex-column talkbox" id="talkbox">
 <% if !@posts.empty?%>
 
 
@@ -31,9 +31,3 @@
 </div>
 
 <%= link_to '프로필페이지로', user_profile_path(current_user.id)%>
-<script>
-  $(document).ready(function() {
-    console.log("hi");
-    $('html').scrollTop($(document).height());
-  });
-</script>

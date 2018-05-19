@@ -30,16 +30,21 @@ class PostsController < ApplicationController
 
   # POST /posts
   # POST /posts.json
+  # 이제 POST /post.js 가능
   def create
+
     @post = Post.new(post_params)
 
     respond_to do |format|
       if @post.save
         format.html { redirect_to post_new_match_path(params["post"]["match_id"], params["post"]["from_id"], params["post"]["to_id"]), notice: 'Post was successfully created.' }
         format.json { render :show, status: :created, location: @post }
+        format.js { render 'create.js.erb' }
       else
+        # 여기는 에러 예외처리 부분인데 생략하자.
         format.html { render :new }
         format.json { render json: @post.errors, status: :unprocessable_entity }
+        format.js {}
       end
     end
   end
