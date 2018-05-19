@@ -13,7 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20180519151400) do
 
-
   create_table "likes", force: :cascade do |t|
     t.integer "liker"
     t.integer "likee"
