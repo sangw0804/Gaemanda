@@ -1,34 +1,29 @@
 <div class="d-flex flex-column align-items-center">
-  <div>
-   내가 좋아요 누른 유저 : 
+  <div class="d-flex justify-content-center">
+    <%= image_tag('https://image.flaticon.com/icons/svg/886/886765.svg', class: 'img-2')%>
+  </div>
       <% @liked_users.each do |liked_user|%>
     <div class="user-box d-flex justify-content-around align-items-center">
         <%= image_tag liked_user[0].image.thumb , style:"width:180px;height:180px;"%>
         <div class="d-flex flex-column justify-content-around align-self-">
             <div>
-            <%= liked_user[0].dog_name%>
-            <%= liked_user[0].dog_kind%>
-            <%=  liked_user[0].is_male_dog? ? "수컷" : "암컷"%>
+            <p><span style="color: salmon">NAME :</span><%= liked_user[0].dog_name%></p>
+            <p><span style="color: salmon">BREED :</span><%= liked_user[0].dog_kind%></p>
+            <p><span style="color: salmon">GENDER :</span><%=  liked_user[0].is_male_dog? ? "수컷" : "암컷"%></p>
             </div>
             <div>
-<<<<<<< HEAD
-            <% if liked_user[1]%>
+            <% if liked_user[1] && @recent_messages[liked_user[0].id]%>
             <%= @recent_messages[liked_user[0].id].content%>
             <% end%>
-=======
-            <%= @recent_messages[liked_user[0].id].content%>
->>>>>>> 9ced0f645ff01bddf74181a0056175578e4ad7f7
             </div>
         </div>
      
-        <%= link_to '좋아요 취소!', like_delete_path(current_user.id, liked_user[0].id), method: :delete%>
+        <%= link_to 'UNDO LIKE', like_delete_path(current_user.id, liked_user[0].id), method: :delete, class: "salmon"%>
       <% if liked_user[1]%>
-        <%= link_to '매칭됨!!!!', post_new_match_path(liked_user[1], current_user.id, liked_user[0].id)%>
+        <%= link_to 'MATCHED !', post_new_match_path(liked_user[1], current_user.id, liked_user[0].id), class: "salmon"%>
       <% end%>
     </div>
     <br>
       <% end%>
   </div>
 </div>
-
-

@@ -27,7 +27,7 @@
 
 .summer {
     width: 100%;
-    height: auto
+    height: auto;
 }
 
 .img-thumbnail rounded float-left {
@@ -75,6 +75,7 @@
 
 .lilili {
     position: absolute;
+
     font-family: 'Do Hyeon', sans-serif;
 }
 
@@ -91,8 +92,10 @@
 }
 
 .third {
+
     padding-left: 80px;
     padding-right: 40px;
+
     background-color: lightyellow;
     background-size: 100%;
 }
@@ -151,6 +154,64 @@
 
 }
 
+
 .main_button{
     background:url(roaksek1.png)
+}
+
+.formMe {
+    position: relative;
+	background: #00aabb;
+    border-radius: .4em;
+    margin: 10px 20px 10px 20px;
+    padding: 10px;
+}
+
+.formMe:after {
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-left-color: #00aabb;
+	border-right: 0;
+	border-bottom: 0;
+	margin-top: -10px;
+	margin-right: -20px;
+}
+.formTo {
+    position: relative;
+	background: #FFF7C0;
+    border-radius: .4em;
+    margin: 10px 20px 10px 20px;
+    padding: 10px;
+}
+.formTo:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-right-color: #FFF7C0;
+	border-left: 0;
+	border-bottom: 0;
+	margin-top: -10px;
+	margin-left: -20px;
+}
+
+.talkbox {
+    background-color: white;
+    margin:30px 180px 30px 180px;
+    border: 1px solid lightgray;
+    border-radius: 3%;
+    padding:25px;
+  }
+  .img-2 {
+    height: auto;
+    width: 100px;
+
 }

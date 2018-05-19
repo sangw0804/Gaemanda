@@ -25,13 +25,13 @@
 
     <%= form.hidden_field :to_id, id: :post_to_id,value: @likee_id %>
   </div>
+<div class="input-group">
 
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content, id: :post_content %>
-  </div>
+    <%= form.text_area :content, id: :post_content, class:"form-control"%>
+  
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions input-group-append">
+    <%= form.submit '전송', class:"btn btn-outline-secondary"%>
   </div>
+</div>
 <% end %>
