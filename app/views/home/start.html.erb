@@ -1,24 +1,38 @@
-<dev>
-	<h3> 여름이는 자신의 짝을 찾고 싶어합니다. </h3>
-	<% if user_signed_in?%>
-	<%= link_to '시작하기', show_user_path(current_user.id)%>
-	<% else%>
-	<%= link_to '시작하기', new_user_session_path%>
-	<% end%>
-</dev>
 
-<dev>
-	<h4> 서비스 소개 </h4>
-	<p> 개만다는 사랑이 필요한 강아지에게 어울리는 짝을 찾아주는 서비스예요. 우리가 사랑하는 강아지의 행복에 기여하는 것이 개만다의 목적이랍니다! </p>
-</dev>
+<section>
+    <%=image_tag('KakaoTalk_Photo_2018-05-19-16-18-43.1', class: 'card-img')%>
+    <div class="float-left lalala">
+        <strong class="align-self-sm-end card-title text-white font-weight-bold lululu">여름이는 <br> 자신의 짝을 <br> 찾고 싶어합니다.</strong>
+        <form action='/users/sign_in'>
+                <input type='submit' value='찾아주기' class="btn bg-info text-white lilili">
+        </form>
+    </div>
+</section>
 
-<dev>
-	<h4> 이용방법 </h4>
-	<p> 1. 강아지 프로필을 등록해주세요. </p> <td>
-	<p> 2. 강아지와 함께 짝을 선택해주세요. </p> <td>
-	<p> 3. 상대 견주와 연락하여 만남을 주선하세요 </p> <td>
-</dev>
 
-<dev>
-	<h4> 매칭 현황 </h4>
-</dev>
+<section class="second">
+    <div>
+        <%=image_tag('dogkiss', class: 'img-thumbnail rounded float-left')%>
+        <div class="info">
+            <h4 class="font-weight-bold i"> 서비스 소개 </h4>
+            <p> 개만다는 사랑이 필요한 강아지에게 어울리는 짝을 찾아주는 서비스예요. 우리가 사랑하는 강아지의 행복에 기여하는 것이 개만다의 목적이랍니다! </p>
+        </div>
+    </div>
+</section>
+
+<section class="third">
+    <div>
+        <h4 class="font-weight-bold"> 이용방법 </h4>
+        <p> 1. 강아지 프로필을 등록해주세요. </p> <td>
+        <p> 2. 강아지와 함께 짝을 선택해주세요. </p> <td>
+        <p> 3. 상대 견주와 연락하여 만남을 주선하세요 </p> <td>
+    </div>
+</section>
+
+<section>
+    <div>
+        <h4> 매칭 현황 </h4>
+    </div>
+</section>
+
+</body>

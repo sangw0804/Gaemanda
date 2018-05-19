@@ -4,12 +4,63 @@
 .salmon {
     color: salmon;
 }
+
 .font-han {
     font-family: 'Black Han Sans', sans-serif;
 }
 .img {
     height: 50px;
     width: auto;
+
+}
+
+
+.info {
+    margin-left: 250px;
+}
+
+.img-thumbnail rounded float-left {
+    margin-right: 20px;
+}
+
+.lalala {
+    position: absolute;
+    width: 560px;
+    height:  350px;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.3);
+    top: 130px;
+    left: 0px;
+}
+
+.lululu {
+    position: absolute;
+    top: 30px;
+    left: 0px;
+    font-size: 50px;
+    margin-left: 20px;
+}
+
+.lilili {
+    position: absolute;
+    margin-top: 280px;
+    margin-left: 30px;
+    padding-right: 40px;
+    padding-left: 40px;
+}
+
+.second {
+    margin: 20px;
+    background-color: white;
+}
+.info {
+    align-items: center;
+}
+
+.third {
+
+}
+
 
 }
 
@@ -41,3 +92,4 @@
     justify-content: center;
 
 }
+
