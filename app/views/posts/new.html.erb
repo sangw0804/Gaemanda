@@ -1,31 +1,39 @@
+<div class="d-flex flex-column talkbox">
 <% if !@posts.empty?%>
-<table>
-  <thead>
-    <tr>
-      <th>Match</th>
-      <th>Content</th>
-      <th>from_id</th>
-      <th>to_id</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
+
     <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.match_id %></td>
+     <% if post.from_id == current_user.id%>
+    <div class="d-flex justify-content-end">
+    <% else%>
+    <div class="d-flex flex-row-reverse justify-content-end">
+    <% end%>
+      <% if post.from_id == current_user.id%>
+       <div class='formMe align-self-end'>
+      <% else%>
+        <div class='formTo align-self-start'>
+      <% end%>
+        
         <td><%= post.content %></td>
-        <td><%= post.from_id %></td>
-        <td><%= post.to_id %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      </div>
+      <% if post.from_id == current_user.id%>
+      <div class="d-flex justify-content-center align-items-center"><%= image_tag current_user.image, style: "width:40px;height:40px;margin-left:10px;border-radius:50%;" %></div>
+      <% else%>
+      <div class="d-flex justify-content-center align-items-center"><%= image_tag @to_image, style: "width:40px;height:40px;margin-right:10px;border-radius:50%;" %></div>
+      <% end%>
+      </div>
     <% end %>
-  </tbody>
-</table>
 <% else%>
 주고받은 쪽지가 없습니다!
 <% end%>
 
 <%= render 'form', post: @post %>
+</div>
 
 <%= link_to '프로필페이지로', user_profile_path(current_user.id)%>
+<script>
+  $(document).ready(function() {
+    console.log("hi");
+    $('html').scrollTop($(document).height());
+  });
+</script>

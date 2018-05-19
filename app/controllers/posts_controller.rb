@@ -21,6 +21,7 @@ class PostsController < ApplicationController
     @match_id = params[:match_id]
     @user_id = params[:user_id]
     @likee_id = params[:likee_id]
+    @to_image = User.find(params[:likee_id]).image
   end
 
   # GET /posts/1/edit
